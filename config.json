@@ -1,27 +1,27 @@
 {
   "job_01": {
-    "title": "OpenVPN",
-    "key": "/etc/openvpn/client",
-    "check": "ps aux|grep openvpn",
-    "run": "/bin/bash ${batch_path}/run_openvpn.sh",
+    "title": "Shadowsocks",
+    "key": "/etc/Shadowsocks.json",
+    "check": "ps aux|grep /bin/ssserver",
+    "run": "/bin/bash ${batch_path}/run_shadowsocks.sh",
     "label": "1"
   },
   "job_02": {
-    "title": "JupyterNotebook",
-    "key": "/bin/jupyter-notebook",
-    "check": "ps aux|grep jupyter-notebook",
-    "run": "/bin/bash ${batch_path}/run_jupyter.sh",
+    "title": "NetSpeeder",
+    "key": "net_speeder eth0 ip",
+    "check": "ps aux|grep net_speeder",
+    "run": "/bin/bash ${batch_path}/run_netspeeder.sh",
     "label": "1"
   },
   "job_03": {
-    "title": "JupyterNotebook",
-    "key": "/bin/jupyter-notebook",
-    "check": "ps aux|grep jupyter-notebook",
+    "title": "JupyterB2G",
+    "key": "8889:localhost:8888",
+    "check": "ps aux|grep ssh",
     "run": "/bin/bash ${batch_path}/run_jupyter.sh",
-    "label": "0"
+    "label": "1"
   },
   "job_04": {
-    "title": "JupyterNotebook",
+    "title": "placeholder1",
     "key": "/bin/jupyter-notebook",
     "check": "ps aux|grep jupyter-notebook",
     "run": "/bin/bash ${batch_path}/run_jupyter.sh",
