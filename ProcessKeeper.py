@@ -2,12 +2,13 @@ import json
 import os
 import time
 
-obj = open("config.json")
+
+main_path = "/home/marcus/Application/ProcessKeeper/"
+batch_path = main_path+"batch"
+
+obj = open(main_path+"config.json")
 process = json.load(obj)
 obj.close()
-
-main_path = os.getcwd()
-batch_path = main_path+"/batch"
 
 rnk = 0
 time.sleep(1)
