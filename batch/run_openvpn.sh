@@ -1,0 +1,1 @@
+/usr/sbin/openvpn /etc/openvpn/client1.ovpn > /dev/null 2>&1 &
