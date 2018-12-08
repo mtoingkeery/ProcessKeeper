@@ -1,1 +1,1 @@
-runuser -l marcus -c "ssh -C -f -N -g -L 8889:localhost:8888 marcus@base"
+runuser -l marcus -c "/home/marcus/Application/Anaconda3/bin/python /home/marcus/Application/Anaconda3/bin/jupyter-notebook > /dev/null 2>&1 &"

@@ -2,13 +2,8 @@ import json
 import os
 import time
 
-
 main_path = "/home/marcus/Application/ProcessKeeper/"
 batch_path = main_path+"batch"
-
-obj = open(main_path+"config.json")
-process = json.load(obj)
-obj.close()
 
 rnk = 0
 time.sleep(1)
@@ -17,24 +12,37 @@ try:
     while(1):
         print(time.strftime('%Y/%m/%d %T')+" ---------- %d" % rnk)
 
+        obj = open(main_path+"config.json")
+        process = json.load(obj)
+        obj.close()
+
         for para in process.keys():
             content = process[para]
-            if content["label"]=="0": continue
-
             print(time.strftime('%Y/%m/%d %T')+' - '+content["title"])
 
             log = os.popen(content["check"].replace("${batch_path}",batch_path))
-            logs = "".join(log.readlines())
+            log_lines = log.readlines()
+            log_total = "".join(log_lines)
 
-            if content["key"] not in logs:
-                print(time.strftime('%Y/%m/%d %T')+' ----- No Process & Will Re-Run')
-                os.system(content["run"].replace("${batch_path}",batch_path))
+            if content["label"]=="0":
+                if content["key"] not in log_total:
+                    print(time.strftime('%Y/%m/%d %T')+' ----- No Process')
+                else:
+                    print(time.strftime('%Y/%m/%d %T')+' ----- Still Running & Will Kill')
+                    for log_line in log_lines:
+                        if content["key"] in log_line:
+                            pid = log_line.replace("  "," ").replace("  "," ").split(" ")[1]
+                            os.system("kill -9 %s" % pid)
             else:
-                print(time.strftime('%Y/%m/%d %T')+' ----- Still Running')
+                if content["key"] not in log_total:
+                    print(time.strftime('%Y/%m/%d %T')+' ----- No Process & Will Re-Run')
+                    os.system(content["run"].replace("${batch_path}",batch_path))
+                else:
+                    print(time.strftime('%Y/%m/%d %T')+' ----- Still Running')
 
         time.sleep(60)
         rnk += 1
-        #if rnk>1: break
+        #if rnk>6: break
 
 except Exception as e:
     print(time.strftime('%Y/%m/%d %T')+"- Exception")
