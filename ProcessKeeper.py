@@ -12,7 +12,7 @@ try:
     while(1):
         print(time.strftime('%Y/%m/%d %T')+" ----------------------------------------- %d" % rnk)
 
-        obj = open(main_path+"config.json")
+        obj = open(main_path+"config.json","r")
         process = json.load(obj)
         obj.close()
 
