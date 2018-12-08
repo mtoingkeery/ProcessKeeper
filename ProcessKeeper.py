@@ -40,9 +40,9 @@ try:
                 else:
                     print(time.strftime('%Y/%m/%d %T')+' ---------- Still Running')
 
-        time.sleep(2)
+        time.sleep(60)
         rnk += 1
-        if rnk>6: break
+        #if rnk>6: break
 
 except Exception as e:
     print(time.strftime('%Y/%m/%d %T')+"- Exception")
