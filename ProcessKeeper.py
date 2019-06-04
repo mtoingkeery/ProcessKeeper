@@ -2,7 +2,7 @@ import json
 import os
 import time
 
-main_path = "/home/marcus/Application/ProcessKeeper/"
+main_path = "/home/zach/Applications/ProcessKeeper/"
 batch_path = main_path+"batch"
 
 rnk = 0

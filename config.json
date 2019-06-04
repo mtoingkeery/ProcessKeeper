@@ -4,7 +4,7 @@
     "key": "/etc/Shadowsocks.json",
     "check": "ps aux|grep sslocal",
     "run": "/bin/bash ${batch_path}/run_shadowsocks.sh",
-    "label": "1"
+    "label": "0"
   },
   "job_02": {
     "title": "JupyterB2G",
@@ -14,11 +14,11 @@
     "label": "0"
   },
   "job_03": {
-    "title": "OpenVPN",
-    "key": "/etc/openvpn/client",
-    "check": "ps aux|grep openvpn",
-    "run": "/bin/bash ${batch_path}/run_openvpn.sh",
-    "label": "0"
+    "title": "Onedrive",
+    "key": "/usr/bin/onedrive",
+    "check": "ps aux|grep onedrive",
+    "run": "/bin/bash ${batch_path}/run_onedrive.sh",
+    "label": "1"
   },
   "job_04": {
     "title": "JupyterNotebook",
