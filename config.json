@@ -4,34 +4,41 @@
     "key": "/etc/Shadowsocks.json",
     "check": "ps aux|grep sslocal",
     "run": "/bin/bash ${batch_path}/run_shadowsocks.sh",
-    "label": "0"
+    "label": "1"
   },
   "job_02": {
     "title": "JupyterB2G",
     "key": "8898:localhost:8888",
     "check": "ps aux|grep 8888",
     "run": "/bin/bash ${batch_path}/run_jupyterb2g.sh",
-    "label": "0"
+    "label": "1"
   },
   "job_03": {
+    "title": "PostgresB2G",
+    "key": "5422:localhost:5432",
+    "check": "ps aux|grep 5432",
+    "run": "/bin/bash ${batch_path}/run_postgresb2g.sh",
+    "label": "1"
+  },
+  "job_04": {
     "title": "Onedrive",
     "key": "/usr/bin/onedrive",
     "check": "ps aux|grep onedrive",
     "run": "/bin/bash ${batch_path}/run_onedrive.sh",
-    "label": "1"
+    "label": "0"
   },
-  "job_04": {
+  "job_05": {
     "title": "JupyterNotebook",
     "key": "/bin/jupyter-notebook",
     "check": "ps aux|grep jupyter",
     "run": "/bin/bash ${batch_path}/run_jupyter.sh",
     "label": "1"
   },
-  "job_05": {
+  "job_06": {
     "title": "SSHB2G",
-    "key": "8822:localhost:22",
+    "key": "8812:localhost:22",
     "check": "ps aux|grep 22",
     "run": "/bin/bash ${batch_path}/run_sshb2g.sh",
-    "label": "0"
+    "label": "1"
   }
 }
