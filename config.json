@@ -25,7 +25,7 @@
     "key": "/usr/bin/onedrive",
     "check": "ps aux|grep onedrive",
     "run": "/bin/bash ${batch_path}/run_onedrive.sh",
-    "label": "0"
+    "label": "1"
   },
   "job_05": {
     "title": "JupyterNotebook",
