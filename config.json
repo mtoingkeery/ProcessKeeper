@@ -40,5 +40,12 @@
     "check": "ps aux|grep 22",
     "run": "/bin/bash ${batch_path}/run_sshb2g.sh",
     "label": "1"
+  },
+  "job_07": {
+    "title": "HiveB2G",
+    "key": "8078:localhost:8088",
+    "check": "ps aux|grep 8088",
+    "run": "/bin/bash ${batch_path}/run_hiveb2g.sh",
+    "label": "1"
   }
 }
